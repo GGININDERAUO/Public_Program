@@ -1,0 +1,33 @@
+#2006/11/28#
+@1.0.0.0 Release 
+
+#2006/12/5#
+@1.0.0.1 
+* 1. 將原本5個Param改成9個Param
+* 2. 修改函式名稱
+     CSubSystemDispatcher.Init -> CSubSystemDispatcher.CreateListener
+     CSubSystemDispatcher.Close -> CSubSystemDispatcher.Disconnect
+	 CControlManager.AddClient -> CControlManager.CreateClient
+* 3. CControlManager.CreateClient中, 加入若無法建立連線, 則將所有已經建立的連線中斷
+
+#2007/01/19#
+@1.0.0.2
+* 1. 修改Namespace AUO.Module.M11.EQ.SubSystemControl -> AUO.SubSystemControl
+
+#2007/03/20#
+@1.0.0.3
+* 1. SubSystemControlConst remove status of NG 
+* 2. CRequest remove m_PanelId, m_Pattern (Divide into two command PANEL_ID and PATTERN_INFO)
+* 3. CResponse remove m_NgOrErrMessage (if ERR, then Param1 place the error message)
+
+#2007/07/31#
+@1.0.0.4
+* 1. Timeout with ErrMessage "Timeout"
+* 2. Response Result check Mechanism ("OK", "ERR" and "else")
+
+
+#2007/08/2#
+@0.2007.08.1
+
+TODO:	1. 不要繼承System.Net.Sockets.TcpListener
+		2. 修改Listener的動作 Start/Stop
